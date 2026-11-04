@@ -1,7 +1,6 @@
 # Matroid-Schnitt – zwei Strukturen auf einmal – Streamlit-Demo
 
-<!-- TODO nach dem Deploy: direkt hierher den Live-Link setzen (Leerzeile davor und danach):
-**[→ Demo live ausprobieren](https://sebastianhanisch-matroid-schnitt-demo.streamlit.app/)** -->
+**[→ Demo live ausprobieren](https://sebastianhanisch-matroid-schnitt-demo.streamlit.app/)**
 
 Siebtes Stück der Reihe **Matroide und Submodularität** (Bereich Kombinatorik) in der „Konzepte“-Reihe für die Website „Sebastian Hanisch – Operations Research und Machine Learning“. Die Demo behandelt **zwei Matroide auf einmal**: Gesucht ist die größte Menge, die in M1 **und** in M2 unabhängig ist. Beispiele: ein **Regenbogen-Spannbaum** (Wald und lauter verschiedene Farben), eine **Zuordnung** (bipartites Matching) und eine **Arboreszenz**. Der Schnitt ist in diesen Beispielen **kein Matroid**: Greedy erreicht **mindestens die Hälfte** des Optimums (scharf), der **Austauschgraph** liefert das Optimum, und sein Ende liefert ein **Zertifikat** (Min-Max-Formel von Edmonds). Dazu der Tab **Orakelaufrufe**: naiv gegen faul gegen faul mit Greedy-Start.
 
