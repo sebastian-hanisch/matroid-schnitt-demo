@@ -49,7 +49,7 @@ PRESETS = {
 }
 PRESET_HELP = {
     "Standardfall (Voreinstellung)": "Wald und sechs Farben auf 7 Standorten: Greedy scheitert bei vielen Reihenfolgen, der Austauschgraph findet den Regenbogen-Wald.",
-    "Drei Farben": "Nur drei Farben: Das Optimum ist die Farbzahl, und Greedy scheitert nie; der Schnitt ist hier kein gutes Beispiel für Greedy-Fehler.",
+    "Drei Farben": "Nur drei Farben: Das Optimum ist die Farbzahl, und Greedy scheitert auf dem Standardplan nie; der Schnitt ist hier kein gutes Beispiel für Greedy-Fehler.",
     "Zuordnung": "Bipartites Matching im Doppelgraphen: Greedy scheitert bei den meisten Reihenfolgen.",
     "Arboreszenz (fest)": "Festes Beispiel mit 6 Knoten und 12 Bögen, unabhängig vom Plan: ein graphisches Matroid und ein Partitionsmatroid.",
 }

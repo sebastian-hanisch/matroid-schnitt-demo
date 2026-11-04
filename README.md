@@ -3,19 +3,19 @@
 <!-- TODO nach dem Deploy: direkt hierher den Live-Link setzen (Leerzeile davor und danach):
 **[→ Demo live ausprobieren](https://sebastianhanisch-matroid-schnitt-demo.streamlit.app/)** -->
 
-Siebtes Stück der Reihe **Matroide und Submodularität** (Bereich Kombinatorik) in der „Konzepte“-Reihe für die Website „Sebastian Hanisch – Operations Research und Machine Learning“. Die Demo behandelt **zwei Matroide auf einmal**: Gesucht ist die größte Menge, die in M1 **und** in M2 unabhängig ist. Beispiele: ein **Regenbogen-Spannbaum** (Wald und lauter verschiedene Farben), eine **Zuordnung** (bipartites Matching) und eine **Arboreszenz**. Der Schnitt ist **kein Matroid**: Greedy erreicht **mindestens die Hälfte** des Optimums (scharf), der **Austauschgraph** liefert das Optimum, und sein Ende liefert ein **Zertifikat** (Min-Max-Formel von Edmonds). Dazu der Tab **Orakelaufrufe**: naiv gegen faul gegen faul mit Greedy-Start.
+Siebtes Stück der Reihe **Matroide und Submodularität** (Bereich Kombinatorik) in der „Konzepte“-Reihe für die Website „Sebastian Hanisch – Operations Research und Machine Learning“. Die Demo behandelt **zwei Matroide auf einmal**: Gesucht ist die größte Menge, die in M1 **und** in M2 unabhängig ist. Beispiele: ein **Regenbogen-Spannbaum** (Wald und lauter verschiedene Farben), eine **Zuordnung** (bipartites Matching) und eine **Arboreszenz**. Der Schnitt ist in diesen Beispielen **kein Matroid**: Greedy erreicht **mindestens die Hälfte** des Optimums (scharf), der **Austauschgraph** liefert das Optimum, und sein Ende liefert ein **Zertifikat** (Min-Max-Formel von Edmonds). Dazu der Tab **Orakelaufrufe**: naiv gegen faul gegen faul mit Greedy-Start.
 
 **Einordnung in die Reihe:** Nachfolger von [dualmatroid-demo](../dualmatroid-demo) (Stück 6), [greedy-optimalitaet-demo](../greedy-optimalitaet-demo) (Stück 5: Greedy genau bei einem Matroid optimal), [rang-basen-kreise-demo](../rang-basen-kreise-demo) (Stück 4), [matroid-demo](../matroid-demo) (Stück 3), [unabhaengigkeitssystem-demo](../unabhaengigkeitssystem-demo) (Stück 2) und [greedy-austausch-demo](../greedy-austausch-demo) (Stück 1). Anders als in Stück 3 bis 6 sind die Beispiele **Paare** von Matroiden, nicht die elf Systeme eines Matroids. Stück 8 gewichtet den Schnitt.
 
 ## Warum dieses Problem
 
-Stück 5 zeigte: Greedy ist genau bei **einem** Matroid für jede Gewichtung optimal. Viele Aufgaben bestehen aber aus **zwei** Bedingungen auf einmal: ein Wald **und** lauter verschiedene Farben, jede Leitung höchstens einmal je Anfang **und** je Ende, ein Baum **und** höchstens ein Eingang je Knoten. Dann ist die Menge der erlaubten Lösungen kein Matroid mehr, und Greedy scheitert bei vielen Reihenfolgen. Offen ist, ob es trotzdem ein exaktes Verfahren mit Beweis gibt. Es gibt es: den Austauschgraphen, und sein Ende zeigt in einem Zertifikat, warum nichts Größeres geht.
+Stück 5 zeigte: Greedy ist genau bei **einem** Matroid für jede Gewichtung optimal. Viele Aufgaben bestehen aber aus **zwei** Bedingungen auf einmal: ein Wald **und** lauter verschiedene Farben, jede Leitung höchstens einmal je Anfang **und** je Ende, ein Baum **und** höchstens ein Eingang je Knoten. Dann ist die Menge der erlaubten Lösungen im Allgemeinen kein Matroid mehr, und Greedy scheitert bei vielen Reihenfolgen. Offen ist, ob es trotzdem ein exaktes Verfahren mit Beweis gibt. Es gibt es: den Austauschgraphen, und sein Ende zeigt in einem Zertifikat, warum nichts Größeres geht.
 
 ## Befunde und Korrekturen gegenüber dem Plan
 
 - **Greedy erreicht mindestens, nicht höchstens die Hälfte:** Die Hook-Formulierung der Gliederung („erreicht höchstens die Hälfte“) hatte die Richtung vertauscht. Gemessen: Jede maximale gemeinsame Menge hat mindestens die Hälfte des Optimums, und das ist scharf (bei 6 von 256 Paaren mit 3 Elementen genau ½).
-- **Eigene Farbzahl beim Regenbogen:** Mit den drei Kabelfarben der Stücke 3 bis 6 ist das Optimum die Farbzahl und Greedy scheitert nie. Die Demo hat einen Regler (2 bis 8 Farben), voreingestellt 6 (= n − 1 bei 7 Standorten); das Preset „Drei Farben“ zeigt den langweiligen Fall.
-- **Arboreszenz nur als festes Beispiel:** Als Schnitt zweier Matroide braucht sie beide Richtungen jeder Leitung (auf dem Plan 20 bis 32 Elemente, über der Grenze von 16); bei einer festen Orientierung wäre das Partitionsmatroid allein schon der ganze Schnitt.
+- **Eigene Farbzahl beim Regenbogen:** Mit den drei Kabelfarben der Stücke 3 bis 6 ist das Optimum die Farbzahl, und Greedy scheitert auf dem Standardplan nie (auf anderen Plänen selten, bei 14 von 180 geprüften). Die Demo hat einen Regler (2 bis 8 Farben), voreingestellt 6 (= n − 1 bei 7 Standorten); das Preset „Drei Farben“ zeigt den langweiligen Fall.
+- **Arboreszenz nur als festes Beispiel:** Als Schnitt zweier Matroide braucht sie beide Richtungen jeder Leitung (auf dem Plan 20 bis 32 Elemente, über der Grenze von 16); bei einer festen azyklischen Orientierung wäre das Partitionsmatroid allein schon der ganze Schnitt.
 - **Startmenge wählbar:** leere Menge, Greedy nach Nummer oder die **schlechteste maximale Menge** (voreingestellt). Aus der leeren Menge besteht jeder Weg aus einem einzigen Element und zeigt nichts; die schlechteste maximale Menge zeigt die Verbesserungswege.
 - **Zufallsanteile und Messreihen weichen leicht von der Messung vor dem Bau ab:** Die App rechnet 1 000 Zufallsreihenfolgen mit einem aus dem Plan-Seed abgeleiteten Seed (Messung: 2 000), die Messreihe der Orakelaufrufe 20 Pläne je Größe (Messung: 30 für den Regenbogen).
 - **Zertifikat mit der Menge R:** Die erste Messung hatte die zwei Mengen im Zertifikat vertauscht (r1(R) + r2(E ∖ R)) und fand es nur bei 9 von 25 Paaren. Richtig: mit R = von den Quellen aus erreichbar gilt r1(E ∖ R) + r2(R) = |I|.
@@ -35,7 +35,7 @@ Stück 5 zeigte: Greedy ist genau bei **einem** Matroid für jede Gewichtung opt
 
 ## Befunde (gemessen, keine Behauptungen)
 
-Alle Zahlen stehen in `tests/test_claims.py` und werden dort mit den Funktionen der App nachgerechnet. Plan: 7 Standorte, 12 mögliche Leitungen, Seed 8 (die Arboreszenz ist fest und hängt nicht vom Plan ab); Greedy: 1 000 Zufallsreihenfolgen.
+Alle Zahlen stehen in `tests/test_claims.py` und werden dort mit den Funktionen der App nachgerechnet. Plan: 7 Standorte, 12 mögliche Leitungen, Seed 8 (die Arboreszenz ist fest und hängt nicht vom Plan ab); Greedy: 1 000 Zufallsreihenfolgen (Stichprobenwerte, die um bis zu etwa 2 Prozentpunkte von den exakten Anteilen abweichen können).
 
 | Beispiel | Optimum | gemeinsame Mengen | maximale Mengen (Größe: Zahl) | Greedy scheitert | im Mittel | schlechteste |
 |---|---|---|---|---|---|---|
@@ -50,7 +50,7 @@ Alle Zahlen stehen in `tests/test_claims.py` und werden dort mit den Funktionen 
 | **Alle Paare beschrifteter Matroide mit 1 bis 5 Elementen** (4, 25, 256, 4 624, **164 836** Paare; zusammen **169 745**) | Greedy kann scheitern bei 0, 0, **6**, **360**, **24 210** Paaren (zusammen 24 576). Das **schlechteste Verhältnis maximale Menge zu Optimum ist genau ½** bei 6, 300 und 10 870 Paaren (zusammen **11 176**); **unter ½ liegt keines**. Die Min-Max-Formel von Edmonds gilt bei **allen 169 745**. |
 | **Das Verfahren** (alle Paare bis 4 Elemente, 6 000 Zufallspaare bei 5; zusammen **10 909** Paare) | Das Ergebnis ist bei **allen** das Optimum, und das Zertifikat r1(E ∖ R) + r2(R) = \|I\| stimmt bei **allen**. |
 | **Zertifikat auf dem Plan** (Min-Max über alle 4 096 Mengen A) | Das Minimum ist gleich dem Optimum (5, 3, 5, 5) und wird bei 4, 1, 97, 5 Mengen A angenommen. |
-| **Orakelaufrufe** (naiv / faul / faul mit Greedy-Start) | Regenbogen mit 6 Farben: **364 / 150 / 119**; mit 3 Farben: 200 / 108 / 94; Zuordnung: **364 / 75 / 38**; Arboreszenz: **364 / 62 / 24**. Alle Varianten finden dasselbe Optimum. |
+| **Orakelaufrufe** (naiv / faul / faul mit Greedy-Start) | Regenbogen mit 6 Farben: **364 / 150 / 119**; mit 3 Farben: 200 / 108 / 94; Zuordnung: **364 / 75 / 38**; Arboreszenz: **364 / 62 / 24**. Alle Varianten finden dasselbe Optimum. Die Zahlen gelten für diese Zählweise (naiv ohne Zwischenspeicher, Start bei der leeren Menge), nicht für Verfahren der Literatur. |
 | **Messreihe** (20 Pläne je Größe, n − 1 Farben beim Regenbogen) | Regenbogen: n = 6: 253 / 97 / 64; n = 7: 385 / 150 / 99; n = 8: 571 / 202 / 131. Zuordnung: n = 6: 202 / 52 / 30; n = 7: 314 / 76 / 41; n = 8: 443 / 105 / 59. |
 | **Weg mit drei Kanten von Hand** | Optimum 2, Greedy in der Reihenfolge b, a, c erreicht 1; der kürzeste Weg c → b → a hat 3 Knoten; Orakelaufrufe 20 / 8 / 6. |
 
@@ -58,7 +58,7 @@ Alle Zahlen stehen in `tests/test_claims.py` und werden dort mit den Funktionen 
 
 - **Zwei Matroide, ungewichtet.** Drei Matroide sind schon NP-schwer; mit Gewichten braucht der Weg Kosten (Stück 8).
 - **Kleine Grundmengen.** Höchstens 16 Elemente; Optimum und Zertifikat kommen aus allen Teilmengen. Die Orakelaufrufe zählen Fragen an Tabellen, keine Rechenzeit; bei großen Matroiden sind die Zahlen der Literatur andere (Stück 8 als Übersicht).
-- **Beispiele auf einem Plan.** Die Greedy-Anteile gelten für den Plan 7/8 und 1 000 Zufallsreihenfolgen, die Messreihe für Seeds 0 bis 19; mit drei Farben ist das Regenbogen-Beispiel nutzlos (Optimum gleich Farbzahl).
+- **Beispiele auf einem Plan.** Die Greedy-Anteile gelten für den Plan 7/8 und 1 000 Zufallsreihenfolgen, die Messreihe für Seeds 0 bis 19; mit drei Farben ist das Regenbogen-Beispiel wenig aussagekräftig (Optimum gleich Farbzahl).
 - **Das Verfahren an Paaren mit 5 Elementen** nur an 6 000 von 164 836 Zufallspaaren; Greedy-Faktor und Min-Max an allen. Der Beweis steht im Expander, die Messung ersetzt ihn nicht.
 - **Quellen nur als Auszüge** (Edmonds, Lawler, Cunningham; Websuche): Die Min-Max-Formel in dieser Schreibweise und die Greedy-Garantie ½ sind hier hergeleitet und gemessen, nicht aus einer Quelle übernommen.
 - **Die Arboreszenz** ist ein einziges festes Beispiel; die Messreihe über mehrere Pläne gibt es nur für Regenbogen und Zuordnung.

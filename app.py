@@ -92,7 +92,7 @@ with st.container(key="kopf"):
     st.title("🧲 Matroid-Schnitt")
 st.markdown(
     """
-Bisher war es **ein** Matroid. Hier sind es **zwei auf einmal**: Gesucht ist die größte Menge, die in M1 **und** in M2 unabhängig ist (eine **gemeinsame unabhängige Menge**). Beispiele: ein **Regenbogen-Spannbaum** (Wald und lauter verschiedene Farben), eine **Zuordnung** (bipartites Matching) und eine **Arboreszenz**. Der Schnitt zweier Matroide ist **kein Matroid** mehr: Greedy erreicht nur noch **mindestens die Hälfte** des Optimums. Exakt wird es über den **Austauschgraphen**: Ein kürzester Weg von den Quellen zu den Senken vergrößert die Menge um ein Element, und wenn kein Weg mehr da ist, liefert die erreichbare Menge ein **Zertifikat** (Min-Max-Formel von Edmonds).
+Bisher war es **ein** Matroid. Hier sind es **zwei auf einmal**: Gesucht ist die größte Menge, die in M1 **und** in M2 unabhängig ist (eine **gemeinsame unabhängige Menge**). Beispiele: ein **Regenbogen-Spannbaum** (Wald und lauter verschiedene Farben), eine **Zuordnung** (bipartites Matching) und eine **Arboreszenz**. Der Schnitt zweier Matroide ist im Allgemeinen **kein Matroid** mehr: Greedy erreicht nur noch **mindestens die Hälfte** des Optimums. Exakt wird es über den **Austauschgraphen**: Ein kürzester Weg von den Quellen zu den Senken vergrößert die Menge um ein Element, und wenn kein Weg mehr da ist, liefert die erreichbare Menge ein **Zertifikat** (Min-Max-Formel von Edmonds).
 
 Dies ist das **siebte Stück** der Reihe „Matroide und Submodularität“. Weiter unten: vier Experimente (🔬, darunter der Tab **Orakelaufrufe**), eine **Spielwiese**, **🚧 Wo die Annahmen enden** und der Expander **📐 Mathematische Formulierung**.
 """
@@ -270,8 +270,8 @@ st.markdown(
 | **Zwei Matroide, nicht drei** | Der Schnitt von drei oder mehr Matroiden ist schon als Frage nach einer größten gemeinsamen Menge NP-schwer; das Verfahren hier gilt für genau zwei. **(nicht in dieser Reihe)** |
 | **Ungewichtet** | Hier zählt jedes Element gleich. Mit Gewichten braucht der Weg Kosten (+w für Elemente in I, −w außerhalb) und bei Gleichstand die kleinste Knotenzahl. **(Stück 8)** |
 | **Kleine Grundmengen (höchstens 16 Elemente)** | Optimum und Zertifikat werden aus allen Teilmengen berechnet; die Orakelaufrufe zählen Fragen an Tabellen, nicht Rechenzeit. Bei großen Matroiden gibt es nur ein Orakel; dort zählt die Zahl der Aufrufe, und es gibt Verfahren mit deutlich weniger. **(Stück 8: Stand der Forschung)** |
-| **Das Beispiel ist klein und zufällig** | Greedy-Anteile und Aufrufe gelten für den gezeigten Plan und die Seeds der Messreihe (0 bis 19), nicht allgemein. Mit den drei Kabelfarben der früheren Stücke wäre das Regenbogen-Beispiel nutzlos (das Optimum ist die Farbzahl). **(Stück 7)** |
-| **Arboreszenz nur fest** | Als Schnitt zweier Matroide braucht sie beide Richtungen jeder Leitung (20 bis 32 Bögen auf dem Plan, über der Grenze von 16); bei einer festen Orientierung genügt das Partitionsmatroid allein. **(Stück 7)** |
+| **Das Beispiel ist klein und zufällig** | Greedy-Anteile und Aufrufe gelten für den gezeigten Plan und die Seeds der Messreihe (0 bis 19), nicht allgemein. Mit den drei Kabelfarben der früheren Stücke wäre das Regenbogen-Beispiel wenig aussagekräftig (das Optimum ist die Farbzahl). **(Stück 7)** |
+| **Arboreszenz nur fest** | Als Schnitt zweier Matroide braucht sie beide Richtungen jeder Leitung (20 bis 32 Bögen auf dem Plan, über der Grenze von 16); bei einer festen azyklischen Orientierung genügt das Partitionsmatroid allein. **(Stück 7)** |
 | **Vereinigung statt Schnitt** | Wie viele disjunkte Strukturen in ein Matroid passen (zum Beispiel kantendisjunkte Spannbäume), ist die Vereinigung von Matroiden; sie wird auf den Schnitt zurückgeführt. **(Stück 9)** |
 """
 )
